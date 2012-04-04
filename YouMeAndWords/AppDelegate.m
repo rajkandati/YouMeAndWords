@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "HomeViewController.h"
 
 @implementation AppDelegate
 
@@ -14,13 +15,17 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+@synthesize homeViewController = _homeViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    //Passing along managed object context to the HomeViewController
+    
+    _homeViewController = (HomeViewController*) self.window.rootViewController;
+    if (_homeViewController && [_homeViewController respondsToSelector:@selector(setManagedObjectContext:)] ) {
+        _homeViewController.managedObjectContext = self.managedObjectContext;
+    }
+    
     return YES;
 }
 

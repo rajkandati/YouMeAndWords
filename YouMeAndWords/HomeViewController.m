@@ -7,6 +7,8 @@
 //
 
 #import "HomeViewController.h"
+#import "GameViewController.h"
+#import "Game.h"
 
 @interface HomeViewController ()
 
@@ -15,6 +17,16 @@
 @implementation HomeViewController
 
 @synthesize managedObjectContext;
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"PlayGame"]) {
+        NSMutableDictionary *game = [Game getGameForGameNumber:1];
+        GameViewController *gvc = (GameViewController*)segue.destinationViewController;
+        gvc.game = game;
+    }
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

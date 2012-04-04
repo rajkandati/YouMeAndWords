@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3992D958152BEC8B0011FE3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3992D957152BEC8B0011FE3B /* UIKit.framework */; };
+		3992D95A152BEC8B0011FE3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3992D959152BEC8B0011FE3B /* Foundation.framework */; };
+		3992D95C152BEC8B0011FE3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3992D95B152BEC8B0011FE3B /* CoreGraphics.framework */; };
+		3992D95E152BEC8B0011FE3B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3992D95D152BEC8B0011FE3B /* CoreData.framework */; };
+		3992D964152BEC8B0011FE3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3992D962152BEC8B0011FE3B /* InfoPlist.strings */; };
+		3992D966152BEC8B0011FE3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3992D965152BEC8B0011FE3B /* main.m */; };
+		3992D96A152BEC8B0011FE3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3992D969152BEC8B0011FE3B /* AppDelegate.m */; };
+		3992D96D152BEC8B0011FE3B /* YouMeAndWords.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3992D96B152BEC8B0011FE3B /* YouMeAndWords.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3992D953152BEC8B0011FE3B /* YouMeAndWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouMeAndWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3992D957152BEC8B0011FE3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3992D959152BEC8B0011FE3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3992D95B152BEC8B0011FE3B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3992D95D152BEC8B0011FE3B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3992D961152BEC8B0011FE3B /* YouMeAndWords-Info.plist */ = {isa = PBXFileReference; path = "YouMeAndWords-Info.plist"; sourceTree = "<group>"; };
+		3992D963152BEC8B0011FE3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3992D965152BEC8B0011FE3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3992D967152BEC8B0011FE3B /* YouMeAndWords-Prefix.pch */ = {isa = PBXFileReference; path = "YouMeAndWords-Prefix.pch"; sourceTree = "<group>"; };
+		3992D968152BEC8B0011FE3B /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		3992D969152BEC8B0011FE3B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3992D96C152BEC8B0011FE3B /* YouMeAndWords.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YouMeAndWords.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3992D950152BEC8B0011FE3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3992D958152BEC8B0011FE3B /* UIKit.framework in Frameworks */,
+				3992D95A152BEC8B0011FE3B /* Foundation.framework in Frameworks */,
+				3992D95C152BEC8B0011FE3B /* CoreGraphics.framework in Frameworks */,
+				3992D95E152BEC8B0011FE3B /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3992D948152BEC8B0011FE3B = {
+			isa = PBXGroup;
+			children = (
+				3992D95F152BEC8B0011FE3B /* YouMeAndWords */,
+				3992D956152BEC8B0011FE3B /* Frameworks */,
+				3992D954152BEC8B0011FE3B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3992D954152BEC8B0011FE3B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3992D953152BEC8B0011FE3B /* YouMeAndWords.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3992D956152BEC8B0011FE3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3992D957152BEC8B0011FE3B /* UIKit.framework */,
+				3992D959152BEC8B0011FE3B /* Foundation.framework */,
+				3992D95B152BEC8B0011FE3B /* CoreGraphics.framework */,
+				3992D95D152BEC8B0011FE3B /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3992D95F152BEC8B0011FE3B /* YouMeAndWords */ = {
+			isa = PBXGroup;
+			children = (
+				3992D968152BEC8B0011FE3B /* AppDelegate.h */,
+				3992D969152BEC8B0011FE3B /* AppDelegate.m */,
+				3992D96B152BEC8B0011FE3B /* YouMeAndWords.xcdatamodeld */,
+				3992D960152BEC8B0011FE3B /* Supporting Files */,
+			);
+			path = YouMeAndWords;
+			sourceTree = "<group>";
+		};
+		3992D960152BEC8B0011FE3B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3992D961152BEC8B0011FE3B /* YouMeAndWords-Info.plist */,
+				3992D962152BEC8B0011FE3B /* InfoPlist.strings */,
+				3992D965152BEC8B0011FE3B /* main.m */,
+				3992D967152BEC8B0011FE3B /* YouMeAndWords-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3992D952152BEC8B0011FE3B /* YouMeAndWords */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3992D970152BEC8B0011FE3B /* Build configuration list for PBXNativeTarget "YouMeAndWords" */;
+			buildPhases = (
+				3992D94F152BEC8B0011FE3B /* Sources */,
+				3992D950152BEC8B0011FE3B /* Frameworks */,
+				3992D951152BEC8B0011FE3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YouMeAndWords;
+			productName = YouMeAndWords;
+			productReference = 3992D953152BEC8B0011FE3B /* YouMeAndWords.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3992D94A152BEC8B0011FE3B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 3992D94D152BEC8B0011FE3B /* Build configuration list for PBXProject "YouMeAndWords" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3992D948152BEC8B0011FE3B;
+			productRefGroup = 3992D954152BEC8B0011FE3B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3992D952152BEC8B0011FE3B /* YouMeAndWords */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3992D951152BEC8B0011FE3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3992D964152BEC8B0011FE3B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3992D94F152BEC8B0011FE3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3992D966152BEC8B0011FE3B /* main.m in Sources */,
+				3992D96A152BEC8B0011FE3B /* AppDelegate.m in Sources */,
+				3992D96D152BEC8B0011FE3B /* YouMeAndWords.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3992D962152BEC8B0011FE3B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3992D963152BEC8B0011FE3B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3992D96E152BEC8B0011FE3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3992D96F152BEC8B0011FE3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3992D971152BEC8B0011FE3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YouMeAndWords/YouMeAndWords-Prefix.pch";
+				INFOPLIST_FILE = "YouMeAndWords/YouMeAndWords-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3992D972152BEC8B0011FE3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YouMeAndWords/YouMeAndWords-Prefix.pch";
+				INFOPLIST_FILE = "YouMeAndWords/YouMeAndWords-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3992D94D152BEC8B0011FE3B /* Build configuration list for PBXProject "YouMeAndWords" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3992D96E152BEC8B0011FE3B /* Debug */,
+				3992D96F152BEC8B0011FE3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3992D970152BEC8B0011FE3B /* Build configuration list for PBXNativeTarget "YouMeAndWords" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3992D971152BEC8B0011FE3B /* Debug */,
+				3992D972152BEC8B0011FE3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3992D96B152BEC8B0011FE3B /* YouMeAndWords.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3992D96C152BEC8B0011FE3B /* YouMeAndWords.xcdatamodel */,
+			);
+			currentVersion = 3992D96C152BEC8B0011FE3B /* YouMeAndWords.xcdatamodel */;
+			path = YouMeAndWords.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3992D94A152BEC8B0011FE3B /* Project object */;
+}

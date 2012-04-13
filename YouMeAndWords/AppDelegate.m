@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HomeViewController.h"
+#import "YouMeAndWordsConstants.h"
 
 @implementation AppDelegate
 
@@ -17,13 +18,155 @@
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 @synthesize homeViewController = _homeViewController;
 
+
+- (NSString *)uuid
+{
+    NSString *uuidString = nil;
+    CFUUIDRef uuid = CFUUIDCreate(NULL);
+    if (uuid) {
+        uuidString = (__bridge NSString *)CFUUIDCreateString(NULL, uuid);
+        CFRelease(uuid);
+    }
+    return uuidString;
+}
+
+- (Player *)createPlayer 
+{
+    /*Check if a player has an existing uuid saved and create either an
+      empty player object or player object from user defaults */ 
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    Player *player = [[Player alloc] initFromDefaults:defaults];
+    
+    return player;
+}
+
+/**
+ * The following method is code that can be deleted at a later stage once all data
+ * has been uploaded to the database. The method returns mutable dictionary with
+ * game numbers as keys and game objects as values in the dictionary.
+ **/
+- (NSMutableDictionary *)getGamesForThePlayer
+{
+
+    //LetterDef contains the meanings of various words along with the source.
+    
+    NSString *letterDefPath = [[NSBundle mainBundle] pathForResource:@"LetterDef" ofType:@"txt"];
+    NSError *letterDefReadError;
+    
+    //The whole file is read as a string.
+    
+    NSString *stringFromFileAtPath = [[NSString alloc]
+                                      initWithContentsOfFile:letterDefPath
+                                      encoding:NSUTF8StringEncoding
+                                      error:&letterDefReadError];
+    
+    //The string separated based on line breaks.
+    
+    NSArray *arrayOfLines = [stringFromFileAtPath componentsSeparatedByString:@"\n"];
+    
+    //The words and meanings are separated by '#' in each line.  The following code
+    //seperates a word and the respective meaning and puts them in a dictionary.
+    
+    NSString *searchStr = @"#";
+    NSMutableDictionary *wordsAndMeanings = [[NSMutableDictionary alloc] init];
+    for (int i =0; i < arrayOfLines.count; i++) {
+        NSString *currentStr = [arrayOfLines objectAtIndex:i];
+        NSRange range = [currentStr rangeOfString:searchStr options:NSLiteralSearch];
+        NSString *word = [currentStr substringToIndex:range.location];
+        NSString *meaning = [currentStr substringFromIndex:range.location + 1];
+        [wordsAndMeanings setObject:meaning forKey:word];
+    }
+    
+    //Letters file conmtains the individual game letters and the words, that can be
+    //formed using the letters. Each game has a key, game letters and game words. The
+    //key starts with '#' and is used to seperate each game.
+    
+    NSMutableDictionary *gamesForThePlayer = [[NSMutableDictionary alloc] init];
+    
+    NSString *lettersPath = [[NSBundle mainBundle] pathForResource:@"Letters" ofType:@"txt"];
+    NSError *letterReadError;
+    
+    //The file is read in as a string.
+    
+    NSString *lettersStringFromFileAtPath = [[NSString alloc]
+                                             initWithContentsOfFile:lettersPath
+                                             encoding:NSUTF8StringEncoding
+                                             error:&letterReadError];
+    
+    //The individual games are seperated using '#' as seperator and stored in an array.
+    
+    NSArray *arrayOfGames = [lettersStringFromFileAtPath componentsSeparatedByString:@"#"];
+    
+    //The letters aand words in a game are seperated by ';'.
+    
+    NSString *gameSeparatorStr = @";";
+    
+    for (int i =0; i < arrayOfGames.count; i++) {
+        Game *game = [[Game alloc] init];
+        NSString *gameStr = [arrayOfGames objectAtIndex:i];
+        
+        //Calculate the location of the id in the individual game and remove the ID from the game string.
+        
+        NSRange rangeForId = [gameStr rangeOfString:gameSeparatorStr options:NSLiteralSearch];
+        NSString *gameWithoutId = [gameStr substringFromIndex:rangeForId.location+1];
+        
+        //Calculate the location of the letters in the individual game and seperate the letters from 
+        //possible words list.
+        
+        NSRange rangeForLetters = [gameWithoutId rangeOfString:gameSeparatorStr options:NSLiteralSearch];
+        NSString *letters = [gameWithoutId substringToIndex:rangeForLetters.location];
+        NSString *possibleWords = [gameWithoutId substringFromIndex:rangeForLetters.location + 1];
+        
+        //Creating an array of possible words to use as iteration while determining the meaning
+        //of each word.
+        NSArray *possibleWordsArr = [possibleWords componentsSeparatedByString:@";"];
+        
+        
+        //Creating a string of all the available meanings for the words of an individual game.
+        //The format is to append word#meaning\nword#meaning\n...
+        
+        NSMutableString *meanings = [[NSMutableString alloc] init];
+        for (int j = 0; j < possibleWordsArr.count; j++) {
+            NSString *word = [possibleWordsArr objectAtIndex:j];
+            NSString *meaning = [wordsAndMeanings objectForKey:word];
+            [meanings appendString:word];
+            [meanings appendString:@"#"];
+            if (meaning) {
+                [meanings appendString:meaning];
+            } 
+            if (j < possibleWordsArr.count - 1) {
+                [meanings appendString:@"\n"];
+            }
+        }
+        
+        //Create a game object using the values from above and save in the mutable dictionary.
+        
+        [game setGameNumber:i+1];
+        [game setGameLetters:letters];
+        [game setGameWords:possibleWords];
+        [game setGameMeanings:meanings];
+        [gamesForThePlayer setObject:game forKey:[NSNumber numberWithInt:i+1]];
+    }
+    return gamesForThePlayer;
+     
+}
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //Passing along managed object context to the HomeViewController
+
+    //Create a player object from userdefaults
+    
+    Player *player = [self createPlayer];
+    [player setGames:[self getGamesForThePlayer]];
+    
+    //Passing along managed object context & game player to the HomeViewController
     
     _homeViewController = (HomeViewController*) self.window.rootViewController;
     if (_homeViewController && [_homeViewController respondsToSelector:@selector(setManagedObjectContext:)] ) {
         _homeViewController.managedObjectContext = self.managedObjectContext;
+        _homeViewController.player = player;
     }
     
     return YES;

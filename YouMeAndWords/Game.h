@@ -8,8 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+//A game object that saves all data required for a game. Will eventually become a managed object.
+
 @interface Game : NSObject
 
-+ (NSMutableDictionary *)getGameForGameNumber:(int)gameNumber;
+@property(nonatomic, assign) int gameNumber;
+@property(nonatomic, copy) NSString *gameLetters;
+@property(nonatomic, copy) NSString *gameWords;
+@property(nonatomic, copy) NSString *gameMeanings;
 
 @end

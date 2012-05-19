@@ -20,9 +20,14 @@
  *
  **/
 
+@class GameViewController;
+
+
 @interface GameViewController : UIViewController <AlphabetViewDelegate, GameOverViewControllerDelegate>
 
 //Represents the player specific to the device.
 @property(nonatomic, strong) Player *player;
+
+@property(nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end

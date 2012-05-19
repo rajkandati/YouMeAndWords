@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1170" systemVersion="11D50d" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Bookmark" representedClassName="Bookmark" syncable="YES">
+        <attribute name="meaning" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Game" representedClassName="Game" syncable="YES">
+        <attribute name="gameLetters" attributeType="String" syncable="YES"/>
+        <attribute name="gameMeanings" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gameNumber" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="gameWords" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numberOfWordsPlayerCreated" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="wordsPlayerCreated" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Player" representedClassName="Player" syncable="YES">
+        <attribute name="lastGamePlayed" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numberOfSixPlusLetterWordsCreated" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="totalNumberOfWordsCreated" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="totalScore" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Game" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="Player" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="Bookmark" positionX="160" positionY="192" width="128" height="75"/>
+    </elements>
 </model>

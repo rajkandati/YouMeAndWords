@@ -1,0 +1,92 @@
+Performance
+
+1. Gameover screen table is slow                                                -
+
+Game Screen
+
+1. View grid with letters and letter specific score.(without much ui)           - DONE
+2. 3 static labels (Time Left, Score, 3+ letter words).                         - DONE
+3. Time left and score labels.                                                  - DONE
+4. Pop button functionality                                                     - DONE
+5. Pause button                                                                 - NR
+6. What happens when a user creates a same word again?                          - DONE
+7. What if a word has same letters multiple times?                              - DONE
+
+Game Over Screen
+
+1. Display the grid in smaller version.                                         - DONE
+2. Display three buttons in the bottom to restart game/bookmark/screens.        - DONE
+3. Put a tableview and textview.                                                - DONE
+4. Populate the table view with words.                                          - DONE
+5. Pouplate textview with selected word meaning.                                - DONE
+6. New Game functionality                                                       - DONE
+7. Bookmarks functionality                                                      - DONE
+8. Scores functionality                                                         - NR
+9. Seperate colored bullets for words in the table                              - DONE
+
+Home Screen
+
+1. Static labels - Game title, Rank, Score, Games, Words, +6 words              - DONE
+2. Play button that should take the user to game screen.                        - DONE
+3. Leaderboards button                                                          - NR
+4. Bookmarks button                                                             - DONE
+5. Help & Options button                                                        - DONE
+6. Username details of every user.                                              - NR
+
+
+Player Object
+
+1. Create a player object at game launch and pass it around.                    - DONE
+2. Update the player object when needed.                                        - DONE
+3. Save the player object when leaving.                                         - DONE
+
+Game Object
+1. Create a game object with required peoperties                                - DONE
+
+
+Settings & Help Screen
+
+1. Display screen name                                                          - NR
+2. Display text to enter screen name appropriately.                             - NR 
+
+
+Bookmarks Screen
+1. Display bookmarks from the home screen                                       - DONE
+
+
+iAD Integration into screens.
+
+1. Game play screen                                                             - NR
+
+
+Application specific tasks
+
+1. Configure the orientation for the application.                               - DONE
+2. Change names of delegate methods.                                            -
+3. Change synthesise by adding '= _...'                                         -
+4. Change outlets to weak                                                       -
+5. Check background image co-ordinates                                          - DONE
+6. Check chapter one in iOS Apprentice for any additional effects               - NR
+
+Core Date
+
+1. Read the games & meanings from text files.                                   - DONE
+2. Update the database with game data.                                          - DONE
+3. Save the player data somewhere.                                              - DONE
+
+
+HIG verification
+1. Tappable UI elements is 44 x 44 points                                               - DONE
+2. iOS apps can also use the activity indicator and the progress view                   - 
+    to show status
+3. Animation and sound when user creates a right word vs wrong word.                    - NR
+4. Make sure your UI can handle the double-high status bar                              -
+5. Ratings Button                                                                       - 
+
+
+
+
+
+
+
+

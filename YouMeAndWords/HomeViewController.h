@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AboutViewController.h"
+#import "Player.h"
+#import "BookmarksViewController.h"
+#import "GameViewController.h"
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <AboutViewControllerDelegate, BookmarksViewControllerDelegate>
 
 @property(nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 

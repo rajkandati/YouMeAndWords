@@ -21,6 +21,8 @@
 @property(nonatomic, copy) NSString *score;
 @property(nonatomic, weak) id <AlphabetViewDelegate> delegate;
 
+
+- (id)initWithFrame:(CGRect)frame forScreenSize:(int)size;
 - (void)resetAlphViewButtons;
 
 @end
